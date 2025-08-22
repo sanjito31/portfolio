@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Home() {
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen bg-black relative overflow-hidden scroll-smooth">
       {/* Global ambient glow effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl animate-pulse"></div>
@@ -94,6 +94,85 @@ export default function Home() {
               <p>
                 Today, I focus on using technology to create meaningful impact—particularly developing machine learning solutions to bridge brain signals and robotics, helping individuals with disabilities through intelligent prosthetics and assistive devices.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-16 sm:py-24 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+              Projects
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+              Here are some of the projects I&apos;ve worked on recently
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {/* Project Card 1 - RGB Information Panel */}
+            <div className="bg-neutral-800/70 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden group">
+              <div className="h-48 bg-gradient-to-r from-red-500 to-orange-600 group-hover:from-red-600 group-hover:to-orange-700 transition-all duration-300"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">RGB Information Panel</h3>
+                <p className="text-gray-300 mb-4">
+                  Full-stack IoT display system using ESP32 microcontroller with 64x32 RGB LED matrix. Dockerized API service aggregates real-time data from weather, transit, music, and sports APIs with modular C++ architecture.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">C++</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">ESP32</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">FastAPI</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Docker</span>
+                </div>
+                <div className="flex space-x-4">
+                  
+                  <a href="https://github.com/sanjito31/led_info_panel" className="text-gray-400 hover:text-gray-300 font-medium">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Card 2 - Sanjay's Pics */}
+            <div className="bg-neutral-800/70 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden group">
+              <div className="h-48 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:from-blue-600 group-hover:to-purple-700 transition-all duration-300"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">Sanjay&apos;s Pics</h3>
+                <p className="text-gray-300 mb-4">
+                  Photography portfolio with custom Fujifilm EXIF parser extracting 50+ undocumented metadata fields. Features admin dashboard, role-based auth, and cloud-optimized image pipeline.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Next.js</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">TypeScript</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">PostgreSQL</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Prisma</span>
+                </div>
+                <div className="flex space-x-4">
+                  <a href="https://www.sanjayspics.com" className="text-blue-400 hover:text-blue-300 font-medium">View Project</a>
+                  <a href="https://github.com/sanjito31/sjayspics" className="text-gray-400 hover:text-gray-300 font-medium">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project Card 3 - Portfolio Website */}
+            <div className="bg-neutral-800/70 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden group">
+              <div className="h-48 bg-gradient-to-r from-green-500 to-teal-600 group-hover:from-green-600 group-hover:to-teal-700 transition-all duration-300"></div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-2">Portfolio Website</h3>
+                <p className="text-gray-300 mb-4">
+                  Modern portfolio website built with Next.js and Tailwind CSS, featuring dark mode design, floating navigation, interactive animations, and ambient rainbow glow effects.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Next.js</span>
+                  <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">React</span>
+                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Tailwind</span>
+                  <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">TypeScript</span>
+                </div>
+                <div className="flex space-x-4">
+                  <a href="#hero" className="text-blue-400 hover:text-blue-300 font-medium">View Project</a>
+                  <a href="https://github.com/sanjito31/portfolio" className="text-gray-400 hover:text-gray-300 font-medium">GitHub</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -280,85 +359,6 @@ export default function Home() {
                     </div>
                     <span className="text-gray-300 text-sm">Docker</span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Projects Section */}
-      <section id="projects" className="py-16 sm:py-24 relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-              Projects
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-              Here are some of the projects I&apos;ve worked on recently
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* Project Card 1 - RGB Information Panel */}
-            <div className="bg-neutral-800/70 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden group">
-              <div className="h-48 bg-gradient-to-r from-red-500 to-orange-600 group-hover:from-red-600 group-hover:to-orange-700 transition-all duration-300"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">RGB Information Panel</h3>
-                <p className="text-gray-300 mb-4">
-                  Full-stack IoT display system using ESP32 microcontroller with 64x32 RGB LED matrix. Dockerized API service aggregates real-time data from weather, transit, music, and sports APIs with modular C++ architecture.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">C++</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">ESP32</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">FastAPI</span>
-                  <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Docker</span>
-                </div>
-                <div className="flex space-x-4">
-                  
-                  <a href="https://github.com/sanjito31/led_info_panel" className="text-gray-400 hover:text-gray-300 font-medium">GitHub</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card 2 - Sanjay's Pics */}
-            <div className="bg-neutral-800/70 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden group">
-              <div className="h-48 bg-gradient-to-r from-blue-500 to-purple-600 group-hover:from-blue-600 group-hover:to-purple-700 transition-all duration-300"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">Sanjay&apos;s Pics</h3>
-                <p className="text-gray-300 mb-4">
-                  Photography portfolio with custom Fujifilm EXIF parser extracting 50+ undocumented metadata fields. Features admin dashboard, role-based auth, and cloud-optimized image pipeline.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Next.js</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">TypeScript</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">PostgreSQL</span>
-                  <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">Prisma</span>
-                </div>
-                <div className="flex space-x-4">
-                  <a href="https://www.sanjayspics.com" className="text-blue-400 hover:text-blue-300 font-medium">View Project</a>
-                  <a href="https://github.com/sanjito31/sjayspics" className="text-gray-400 hover:text-gray-300 font-medium">GitHub</a>
-                </div>
-              </div>
-            </div>
-
-            {/* Project Card 3 - Portfolio Website */}
-            <div className="bg-neutral-800/70 backdrop-blur-sm rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 hover:scale-105 transition-all duration-300 overflow-hidden group">
-              <div className="h-48 bg-gradient-to-r from-green-500 to-teal-600 group-hover:from-green-600 group-hover:to-teal-700 transition-all duration-300"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">Portfolio Website</h3>
-                <p className="text-gray-300 mb-4">
-                  Modern portfolio website built with Next.js and Tailwind CSS, featuring dark mode design, floating navigation, interactive animations, and ambient rainbow glow effects.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">Next.js</span>
-                  <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">React</span>
-                  <span className="px-3 py-1 bg-purple-100 text-purple-800 text-sm rounded-full">Tailwind</span>
-                  <span className="px-3 py-1 bg-orange-100 text-orange-800 text-sm rounded-full">TypeScript</span>
-                </div>
-                <div className="flex space-x-4">
-                  <a href="#hero" className="text-blue-400 hover:text-blue-300 font-medium">View Project</a>
-                  <a href="https://github.com/sanjito31/portfolio" className="text-gray-400 hover:text-gray-300 font-medium">GitHub</a>
                 </div>
               </div>
             </div>
