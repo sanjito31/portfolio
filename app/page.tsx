@@ -9,7 +9,6 @@ export default function Home() {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const shouldBeDark = savedTheme ? savedTheme === 'dark' : false; // Default to light mode instead of system preference
     
     setIsDark(shouldBeDark);
