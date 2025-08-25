@@ -2,7 +2,20 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #111111;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+  --nav-border: rgba(0, 0, 0, 0.15);
+  --card-bg: rgba(255, 255, 255, 0.8);
+  --text-secondary: #555555;
+}
+
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --nav-bg: rgba(38, 38, 38, 0.9);
+  --nav-border: rgba(115, 115, 115, 0.5);
+  --card-bg: rgba(38, 38, 38, 0.7);
+  --text-secondary: #999999;
 }
 
 @theme inline {
@@ -10,13 +23,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-ibm-plex-mono);
   --font-mono: var(--font-ibm-plex-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
