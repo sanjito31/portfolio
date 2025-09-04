@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Cactus_Classical_Serif } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/components/NavBar";
 
-const ibmPlexMono = IBM_Plex_Mono({
-  variable: "--font-ibm-plex-mono",
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const serifFont = Cactus_Classical_Serif({
+  variable: "--font-custom-serif",
+  subsets: ["latin"],
+  weight: ["400"]
 });
 
 export const metadata: Metadata = {
   title: "Sanjay Kumar",
-  description: "Sanjay Kumar's Portfolio Website",
+  description: "Personal portfolio for Sanjay Kumar.",
 };
 
 export default function RootLayout({
@@ -19,10 +30,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
+      
       <body
-        className={`${ibmPlexMono.variable} font-sans antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${serifFont.variable} antialiased mx-8 border-black border-l-1 border-r-1`}
       >
+        <NavBar />
         {children}
       </body>
     </html>
