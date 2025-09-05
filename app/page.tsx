@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero"
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, ArrowDown } from "lucide-react"
+import { ArrowDown } from "lucide-react"
+import ProjectCard from "@/components/ProjectCard"
 
 export default function Home() {
 
@@ -53,37 +53,21 @@ export default function Home() {
             />
           </div>
 
-          <div className="col-start-1 col-span-1 row-start-8 row-span-4 flex flex-col border-1 border-black p-[1.25vw] transition-transform duration-300 hover:scale-[1.05] hover:bg-white hover:border-2 hover:border-black">
-            <h2 className="font-mono font-bold text-[4vw]">Sanjay&apos;s Pics</h2>
-            <h3 className="font-mono text-[1.5vw]">Photography portfolio with custom Fujifilm EXIF parser extracting 50+ undocumented metadata fields. Features admin dashboard, role-based auth, and cloud-optimized image pipeline.</h3>
-            <Link
-              href="/projects/sanjays-pics"
-              className="ml-auto mr-4 mt-auto transition-transform duration-300 hover:translate-x-[10px]">
-              <ArrowRight size={64}></ArrowRight>
-            </Link>
+          <div className="col-start-1 col-span-1 row-start-8 row-span-4">
+            <ProjectCard title="Sanjay&apos;s Pics" href="/projects/sanjays-pics">
+              Photography portfolio with custom Fujifilm EXIF parser extracting 50+ undocumented metadata fields. Features admin dashboard, role-based auth, and cloud-optimized image pipeline.
+            </ProjectCard>
           </div>
-
-          <div className="col-start-2 col-span-1 row-start-8 row-span-4 flex flex-col border-1 border-black p-[1.25vw] transition-transform duration-300 hover:scale-[1.05] hover:bg-white hover:border-2 hover:border-black">
-            <h2 className="font-mono font-bold text-[4vw]">LED Info Panel</h2>
-            <h3 className="font-mono text-[1.5vw]">Full-stack IoT display system using ESP32 microcontroller with 64x32 RGB LED matrix. Dockerized API service aggregates real-time data from weather, transit, music, and sports APIs with modular C++ architecture.</h3>
-            <Link
-              href="/projects/led-info-panel"
-              className="ml-auto mr-4 mt-auto transition-transform duration-300 hover:translate-x-[10px]">
-              <ArrowRight size={64}></ArrowRight>
-            </Link>
+          
+          <div className="col-start-2 col-span-1 row-start-8 row-span-4">
+            <ProjectCard title="LED Info Panel" href="/projects/led-info-panel">
+              Full-stack IoT display system using ESP32 microcontroller with 64x32 RGB LED matrix. Dockerized API service aggregates real-time data from weather, transit, music, and sports APIs with modular C++ architecture.
+            </ProjectCard>
           </div>
 
         </div>
 
-        <footer className="pt-20 pb-5 border-1 flex">
-          <div className="flex flex-col mx-auto font-mono font-bold text-[1vw] items-center">
-            <p className="text-[1.5vw]">Thanks for checking out my page!</p>
-            <p className="p-4" />
-            <p>Sanjay Kumar, 2025</p>
-            <p>Created using Next.js. Hosted on Vercel.</p>
-            <p>Design inspired by<Link href="https://ujjo.studiofreight.com/" target="_blank" rel="noopener noreferrer"> Ujjo</Link></p>
-          </div>
-        </footer>
+   
       </div>
         
     
