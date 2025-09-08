@@ -27,7 +27,7 @@ export default function Home() {
           {/* Headshot Image */}
           <div className="col-start-2 col-span-1 row-start-3 row-span-4 border-1 relative transition-transform duration-300 hover:scale-[1.05] hover:bg-white hover:border-2 hover:border-black">
             <Image 
-              src="/svk_headshot.jpg"
+              src="/svk_headshot.JPG"
               fill
               className="object-cover p-[1vw]"
               alt="headshot of Sanjay Kumar"
