@@ -1,7 +1,8 @@
 import Hero from "@/components/Hero"
 import Image from "next/image"
-import { ArrowDown } from "lucide-react"
+import { ArrowDown, ArrowRight } from "lucide-react"
 import ProjectCard from "@/components/ProjectCard"
+import Link from "next/link"
 
 export default function Home() {
 
@@ -63,6 +64,13 @@ export default function Home() {
             <ProjectCard title="LED Info Panel" href="/projects/led-info-panel">
               Full-stack IoT display system using ESP32 microcontroller with 64x32 RGB LED matrix. Dockerized API service aggregates real-time data from weather, transit, music, and sports APIs with modular C++ architecture.
             </ProjectCard>
+          </div>
+          <div className="col-start-1 col-span-2 row-start-12 row-span-1 border-1 border-black flex justify-center items-center">
+            <Link
+              href="/projects"
+              className="flex text-[1.5vw] items-center transition-transform hover:translate-x-[5px]"
+            >See all my projects <ArrowRight size={24} className="transition-transform hover:translate-x-[10px]"></ArrowRight>
+            </Link>
           </div>
 
         </div>

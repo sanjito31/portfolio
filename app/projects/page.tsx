@@ -26,10 +26,25 @@ export default function Projects() {
                 </div>
 
                 <div className="col-start-2 col-span-1 aspect-video">
+                    <ProjectCard title="DocRound" href="/projects/docround">
+                        Web application built for doctors to keep track, log, and organize patients seen in the hospital for improving the billing workflow for private practioners. Designed as a lightweight accessory for traditional EHRs and powered by AI for chart data input. 
+                    </ProjectCard>
+                </div>
+
+
+                <div className="col-start-1 col-span-1 aspect-video">
+                    <ProjectCard title="Particle Simulation" href="/projects/particle-simulator">
+                        Performant multidimensional particle movement and interaction simulator made to model crowd dispersal and flocking behaviors. Built in C.
+                    </ProjectCard>
+                </div>
+
+                <div className="col-start-2 col-span-1 aspect-video">
                     <ProjectCard title="Calendar To Do" href="/projects/to-do">
                         Full-stack web application that features a calendar centric to do list. Features user authentication and PostGreSQL for user information storage and retrieval.
                     </ProjectCard>
                 </div>
+
+                
 
             </div>
             
