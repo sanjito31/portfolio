@@ -6,10 +6,13 @@ export default function About() {
                             bg-black py-4 text-white"
                             >About Me</h1>
 
-            <div className="font-mono font-semibold text-[1.5vw] flex items-center justify-center p-20 border-1">
-                Hey thanks for checking out my portfolio!
-                I&apos;m currently getting my master&apos;s degrees in Computer Science at Columbia University.
-                My goal is to utilize cutting edge machine learning technologies, AI, and advances in data analytics to improve the healthcare experience for patients and providers.
+            <div className="font-mono font-semibold text-[1.5vw] flex flex-col items-center justify-center p-20 border-1">
+                <p className="m-4 text-center">I&apos;m a Computer Science graduate student at Columbia University specializing in Machine Learning. My journey began with a Microbiology degree from UCLA and biomedical research on Parkinson&apos;s disease and ALS at Cedars-Sinai.</p>
+                <br />
+                <p className="m-4 text-center">While analyzing thousands of microscopy images and complex datasets, I discovered my passion for AI and how machine learning could automate analysis and accelerate discoveries that help patients.</p>
+                <br />
+                <p className="m-4 text-center">Today, I focus on using technology to create meaningful impact—particularly developing machine learning solutions to bridge brain signals and robotics, helping individuals with disabilities through intelligent prosthetics and assistive devices.</p>
+                <br />
             </div>
         </div>
     )
