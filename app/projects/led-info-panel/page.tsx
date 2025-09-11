@@ -41,11 +41,11 @@ export default function LEDInfoPanel() {
                 )
             }}
         >
-            <h2 className="font-bold text-[2vw]">Overview</h2>
-            <div className="grid grid-cols-2">
-                <div className="col-start-1 col-span-1 m-8">
+            <h2 className="font-bold text-2xl my-2 md:text-[2vw]">Overview</h2>
+            <div className="max-md:flex max-md:flex-col md:grid md:grid-cols-2">
+                <div className="md:col-start-1 md:col-span-1 md:m-8">
                     <Image 
-                        className="rounded-lg shadow-lg"
+                        className="md:rounded-lg md:shadow-lg"
                         src="https://agdha7peszt0aou5.public.blob.vercel-storage.com/assets/led-info-panel/led-info-panel-wired.JPG" 
                         alt="image of an LED panel connected with multicolor wires to a microcontroller"
                         width={800}
@@ -53,8 +53,8 @@ export default function LEDInfoPanel() {
                     >
                     </Image> 
                 </div>
-                <div className="col-start-2 col-span-1 flex my-auto mx-8">
-                    <div className="text-[1.5vw]">
+                <div className="m-2 md:col-start-2 md:col-span-1 md:flex md:my-auto md:mx-8">
+                    <div className="text-md md:text-[1.5vw]">
                         The <b>LED Matrix panel</b> is connected to the <b>ESP32</b> via the I2C interface using Dupont cables. The ESP32 obtains information via JSON from the <b>remote API endpoints</b> to then display on the LED panel.
                     </div>
                 </div>

@@ -21,20 +21,23 @@ body {
 }
 
 
-svg:hover .move-down {
+svg:hover .move-down,
+svg.touch-animated .move-down {
   transform: translateY(-180px);
 }
-svg:hover .move-up {
+svg:hover .move-up,
+svg.touch-animated .move-up {
   transform: translateY(180px);
 }
 
-@keyframes periodicSlide {
-  0%, 94% { transform: translateY(0); }
-  1%, 2% { transform: translateY(10px); }
-  3%, 4% { transform: translateY(0); }
-  5%, 6% { transform: translateY(10px); }
+@keyframes bounce-down {
+    0% { transform: translateY(0); }
+    20% { transform: translateY(10px); }
+    40% { transform: translateY(10px); }
+    60% { transform: translateY(0); }
+    100% { transform: translateY(0); }
 }
 
-.periodic-animation {
-  animation: periodicSlide 60s infinite;
+.bounce-animation {
+    animation: bounce-down 5s infinite;
 }

@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${serifFont.variable} antialiased mx-2 sm:mx-4 md:mx-8 border-black border-l-1 border-r-1`}
+        className={`${geistSans.variable} ${geistMono.variable} ${serifFont.variable} antialiased mx-2 md:mx-8 border-black border-l-1 border-r-1`}
       >
         <NavBar />
         {children}

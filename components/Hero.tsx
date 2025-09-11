@@ -1,10 +1,13 @@
 
 export default function Hero() {
-
-
     return (
         <div className="w-full">
-            <svg className="w-full h-auto transition-all duration-300" viewBox="0 0 961 541" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg 
+                className="w-full h-auto transition-all duration-300" 
+                viewBox="0 0 961 541" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+            >
                 
                 <g>
                     <path d="M869.419 356.299V287.224L806.02 184.216H837.592L883.168 261.048L928.999 184.216H960.571L896.917 287.224V356.299H869.419Z" fill="#003AE8"/>

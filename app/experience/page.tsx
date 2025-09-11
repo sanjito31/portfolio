@@ -1,64 +1,122 @@
+import Page from "@/components/BasicPageLayout"
+import Link from "next/link"
+
+type ExperienceItem = {
+    company: string
+    role: string
+    location: string
+    dates: string
+    summary: string
+    highlights: string[]
+    tags?: string[]
+}
+
+const EXPERIENCES: ExperienceItem[] = [
+    {
+        company: "Cedars-Sinai Medical Center",
+        role: "Research Associate II",
+        location: "Los Angeles, CA",
+        dates: "Feb 2022 – May 2024",
+        summary:
+            "Biomedical research studying Parkinson's and ALS using computational techniques for image analysis and stem cell culture.",
+        highlights: [
+            "Automated image analysis (10k+ imgs) with Python, CellProfiler, ilastik mache learning models.",
+            "Analyzed 50+ experiments with ANOVA and statistics",
+            "Evaluated ASO therapeutics in lung and mouse models",
+        ],
+        tags: ["Python", "CellProfiler", "ilastik", "Machine Learning", "High Throughput Imaging", "R", "ANOVA", "Stem Cell Culture"],
+    },
+    {
+        company: "Arthritis & Pain Relief Medical Center",
+        role: "Medical Scribe",
+        location: "Los Angeles, CA",
+        dates: "Sep 2020 – Jan 2024",
+        summary:
+            "Supported a busy clinic with efficient documentation, EHR upkeep, and workflow automations.",
+        highlights: [
+            "Built charting automations; throughput 15 → 25/day",
+            "Maintained EHR for 200+ patients",
+            "Patient communication in English and Spanish",
+        ],
+        tags: ["Automation", "EHR", "Clinical Ops", "Bilingual"],
+    },
+]
+
+function ExperienceCard({
+    company,
+    role,
+    location,
+    dates,
+    summary,
+    highlights,
+    tags = [],
+}: ExperienceItem) {
+    return (
+        <article className="border-1 border-black p-8 transition-transform duration-300 hover:scale-[1.02] hover:bg-white hover:border-2 hover:border-black">
+            <header className="mb-2">
+                <h3 className="font-mono font-bold text-xl md:text-[2vw]">
+                    {company}
+                </h3>
+                <h4 className="font-mono font-bold text-lg md:text-[1.75vw]">
+                    {role}
+                </h4>
+                <p className="font-mono text-md md:text-[1vw]">
+                    {location} <span className="mx-1">•</span> {dates}
+                </p>
+            </header>
+            <p className="font-mono mb-3 text-md md:text-[1.5vw] ">{summary}</p>
+            <ul className="mb-4 list-disc space-y-1 pl-5 font-mono text-sm md:text-[1.5vw]">
+                {highlights.map((h, i) => (
+                    <li key={i}>{h}</li>
+                ))}
+            </ul>
+            {tags.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                    {tags.map((t) => (
+                        <span
+                            key={t}
+                            className="border-1 border-black px-2 py-1 font-mono text-md md:text-[1.25vw]"
+                        >
+                            {t}
+                        </span>
+                    ))}
+                </div>
+            )}
+        </article>
+    )
+}
+
 export default function Experience() {
     return (
-        <div className="flex flex-col">
-            <h1 className="flex items-center justify-center 
-                            font-mono font-bold text-[4vw] 
-                            bg-black py-4 text-white"
-                            >Experience</h1>
-
-            <div className="grid grid-col-4 font-mono text-[1vw]">
-                <div className="col-start-1 col-span-1 flex flex-col justify-center items-center border-1 border-black p-[1vw]">
-                    <h3 className="text-[1.25vw] font-semibold">Cedars-Sinai Medical Center</h3>
-                    <p><i>Los Angeles, CA</i></p>
-                    <p><b>Research Associate II</b></p>
-                    <p>Feb 2022 - May 2024</p>
-                </div>
-                <div className="col-start-2 col-span-3 flex flex-col justify-center items-center border-1 border-black p-[1.5vw]">
-                    <ul className="list-disc">
-                        <li>
-                            Applied machine learning to data by developing three custom Python scripts and macros to automate high-throughput imaging analysis, processing over 10,000 microscopy images using computer vision techniques with CellProfiler, Random Forest, and R.
-                        </li>
-                        <li>
-                            Conducted large-scale biomedical research studying gut microbiome-CNS relationships in Parkinson&apos;s Disease patients using 50+ micro-fluidic chip models, generating complex datasets requiring advanced statistical analysis and pattern recognition.
-                        </li>
-                        <li>
-                            Analyzed clinical research data using ANOVA and statistical methods to summarize quantitative PCR, ELISA, and Western Blot results across 50+ experiments, demonstrating expertise in healthcare data interpretation and validation.
-                        </li>
-                        <li>
-                            Investigated therapeutic interventions by testing anti-sense oligonucleotides for SARS-CoV2 prevention in primary lung tissue and mouse models across 5 major experiments, contributing to understanding of precision medicine approaches.
-                        </li>
-                        <li>
-                            Managed complex laboratory workflows by mastering 20+ standard operating procedures for stem.
-                        </li>
-                    </ul>
-                </div>
-
-                <div className="col-start-1 col-span-1 flex flex-col justify-center items-center border-1 border-black p-[1vw]">
-                    <h3 className="text-[1.25vw] font-semibold">Arthritis and Pain Relief Medical Center - Dr. Soha Dolatabadi</h3>
-                    <p><i>Los Angeles, CA</i></p>
-                    <p><b>Medical Scribe</b></p>
-                    <p>Sep 2020 - Jan 2024</p>
-                </div>
-                <div className="col-start-2 col-span-3 flex flex-col justify-center items-center border-1 border-black p-[1.5vw]">
-                    <ul className="list-disc">
-                        <li>
-                            Streamlined clinical workflows by documenting and transcribing medical histories, medications, physical examinations, and treatment plans in real-time, gaining deep understanding of patient care processes and documentation requirements that insurance companies require.
-                        </li>
-                        <li>
-                            Optimized healthcare data management by maintaining detailed electronic health records (EHR) for over 200 patients, ensuring seamless information flow between healthcare providers and insurance entities through organized documentation of lab results, imaging reports, and clinical notes.
-                        </li>
-                        <li>
-                            Developed automation solutions by creating custom scripts and macros to eliminate repetitive charting tasks, resulting in 67% increased patient throughput (15 to 25 patients daily) and demonstrating early application of technical skills to solve healthcare inefficiencies.
-                        </li>
-                        <li>
-                            Facilitated patient-provider communication by interfacing directly with patients in both Spanish and English to explain care instructions, diagnostic procedures, and address questions, providing insight into patient experience pain points in the healthcare journey.
-                        </li>
-                    </ul>
-                </div>
+        <Page pageTitle="Experience">
+            <div className="w-full flex justify-center md:justify-end border-1 border-black p-4">
+                <Link
+                    href="https://agdha7peszt0aou5.public.blob.vercel-storage.com/assets/Sanjay_Kumar.pdf"
+                    className="border-1 border-black px-4 py-2 font-mono font-semibold transition-colors hover:bg-black hover:text-white"
+                >
+                    Download Resume
+                </Link>
             </div>
+            <div className="flex flex-col border-t-1 border-b-1">
 
+                {EXPERIENCES.map((e, i) => (
+                    <div key={i} className="md:grid md:grid-cols-6">
+                        <div className="hidden md:col-start-1 md:col-span-1 md:flex md:border-l-1">
+                            <svg height="24" width="24" xmlns="http://www.w3.org/2000/svg" 
+                                    className="my-auto ml-auto mr-4">
+                                <circle r="12" cx="12" cy="12" fill="black"/>
+                            </svg>
+                        </div>
+                        <div className="md:col-start-2 md:col-span-5 flex md:border-r-1 md:p-8">
+                            <ExperienceCard {...e}>
+                            </ExperienceCard>
+                        </div>
+                    </div>
+                ))}
+                
 
-        </div>
+            </div>
+        </Page>
     )
 }
         

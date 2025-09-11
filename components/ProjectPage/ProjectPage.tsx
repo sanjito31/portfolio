@@ -13,13 +13,13 @@ export default function ProjectPage({ pageTitle, basicInfoProps, techStackProps,
     return (
         <Page pageTitle={pageTitle}>
             <div className="font-mono">
-                <div className="grid grid-cols-2">
+                <div className="flex flex-col md:grid md:grid-cols-2">
                     
-                    <BasicInfo {...basicInfoProps} className="col-start-1 col-span-1 flex flex-col items-start justify-center border-1 p-10"/>
+                    <BasicInfo {...basicInfoProps} className="md:col-start-1 md:col-span-1 flex flex-col items-start justify-center border-1 p-10"/>
 
-                    <TechStack {...techStackProps} className="col-start-2 col-span-1 flex flex-col items-center justify-center border-1 p-10"/>
+                    <TechStack {...techStackProps} className="md:col-start-2 md:col-span-1 flex flex-col items-center justify-center border-1 p-4 md:p-10"/>
                     
-                    <div className="col-start-1 col-span-2 flex flex-col items-center justify-center border-1">
+                    <div className="md:col-start-1 md:col-span-2 flex flex-col items-center justify-center border-1">
                         {children}
                     </div>
                 </div>

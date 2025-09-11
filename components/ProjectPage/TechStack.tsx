@@ -45,7 +45,8 @@ export default function TechStack({
 
     return (
         <div className={className}>
-            <h2 className="font-bold text-[1.5vw] mb-4">Tech Stack</h2>
+            <h2 className="font-bold text-lg mb-2
+                            md:text-[1.5vw] md:mb-4">Tech Stack</h2>
             <div className="flex flex-col items-start">
 
                 {children}
