@@ -26,7 +26,7 @@ export default function ProjectCard({
                             p-4 
                             md:p-[1.25vw] md:h-full
                             transition-transform duration-300 
-                            hover:scale-[1.05] hover:bg-white hover:border-2 hover:border-black">
+                            hover:scale-[1.1] hover:bg-white hover:border-2 hover:border-black">
                 <div className="col-start-1 col-span-1 row-start-1 row-span-1">
                     <h2 className="font-mono font-bold 
                                     text-4xl mb-2

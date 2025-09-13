@@ -14,14 +14,14 @@ export default function Home() {
 
           {/* Hero Section */}
           <div className="flex p-2
-                        md:col-start-2 md:col-span-1 md:row-start-1 md:row-span-4 md:p-4
+                        md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-4 md:p-4
                         border-black border-1 items-center justify-center">
             <Hero></Hero>
           </div>
 
           {/* About Me Line */}
           <div className="flex p-2
-                          md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-2 md:p-[2vw]
+                          md:col-start-2 md:col-span-1 md:row-start-1 md:row-span-2 md:p-[2vw]
                         border-black border-1 items-center justify-center">
 
             <p className="text-center font-mono 
@@ -33,7 +33,7 @@ export default function Home() {
 
           {/* Headshot Image */}
           <div className="flex p-2 max-md:aspect-video
-                          md:col-start-1 md:col-span-1 md:row-start-3 md:row-span-4 
+                          md:col-start-2 md:col-span-1 md:row-start-3 md:row-span-4 
                           border-1 relative transition-transform duration-300 hover:scale-[1.05] hover:bg-white hover:border-2 hover:border-black">
             <Image 
                 src="https://agdha7peszt0aou5.public.blob.vercel-storage.com/assets/svk_headshot.JPG"              
@@ -45,7 +45,7 @@ export default function Home() {
 
           {/* Statement of purpose line */}
           <div className="flex p-2
-                          md:col-start-2 md:col-span-1 md:row-start-5 md:row-span-2 md:p-[2vw]
+                          md:col-start-1 md:col-span-1 md:row-start-5 md:row-span-2 md:p-[2vw]
                           items-center justify-center border-1 border-black ">
             <p className="text-center font-mono 
                           text-md
