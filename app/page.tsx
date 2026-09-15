@@ -75,18 +75,14 @@ export default function Home() {
             <div className="
                             md:col-start-1 md:col-span-1 md:row-start-8 md:row-span-4">
               
-                <ProjectCard title="Small Businesses Payroll" href="/projects/small-businesses-payroll">
-                  Full-stack payroll platform with historical employee records, immutable payroll snapshots, and business-scoped access. Independently deployed web and API services with Docker and CI/CD.
-                </ProjectCard>
+                <ProjectCard projectId="small-businesses-payroll" />
               
             </div>
             
             <div className="
                             md:col-start-2 md:col-span-1 md:row-start-8 md:row-span-4">
               
-                <ProjectCard title="Minitron" href="/projects/led-info-panel">
-                  An ESP32-powered 64x32 HUB75 LED display with FreeRTOS animation rendering, I2S DMA refresh, and a Dockerized FastAPI service for live weather, transit, music, and Formula 1 data.
-                </ProjectCard>
+                <ProjectCard projectId="led-info-panel" />
               
             </div>
           

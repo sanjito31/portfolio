@@ -1,21 +1,21 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { projects, type ProjectId } from "@/data/projects";
 
 type ProjectCardProps = {
+    projectId: ProjectId
+} | {
     title: string,
     href: string,
-    tags?: string[],
+    tags?: readonly string[],
     children: React.ReactNode
 }
 
 
-export default function ProjectCard({
-    title,
-    href,
-    tags,
-    children,
-
-}: ProjectCardProps) {
+export default function ProjectCard(props: ProjectCardProps) {
+    const { title, href, tags, description } = "projectId" in props
+        ? projects[props.projectId]
+        : { ...props, description: props.children };
 
     return(
         <Link href={href}>
@@ -33,7 +33,7 @@ export default function ProjectCard({
                                     md:text-[4vw]">{title}</h2>
 
                     <div className="flex flex-col">
-                        <h3 className="font-mono text-md md:text-[1.5vw] mb-4">{children}</h3>
+                        <h3 className="font-mono text-md md:text-[1.5vw] mb-4">{description}</h3>
                         {tags && tags.length > 0 && (
                             <div className="flex flex-wrap gap-2">
                                 {tags.map((t) => (
