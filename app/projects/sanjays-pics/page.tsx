@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Highlights from "@/components/ProjectPage/Highlights"
 import ProjectPage from "@/components/ProjectPage/ProjectPage"
 import { BasicInfoProps } from "@/components/ProjectPage/BasicInfo"
 import { TechStackProps } from "@/components/ProjectPage/TechStack"
@@ -6,9 +7,10 @@ import { Tags } from "lucide-react"
 
 export default function SanjaysPics() {
     const basicInfoParams: BasicInfoProps = {
-        description: "Blog style photography portfolio website with custom EXIF parser specifically designed to pull Fujifilm specific metadata fields such as Film Simulation and recipe information.",
+        description: "A Next.js photography portfolio with a custom TypeScript TIFF/IFD parser for proprietary Fujifilm MakerNote metadata, authenticated administration, image management, and EXIF visualization.",
         contributor: "Sanjay Kumar",
-        date: "August 2025",
+        date: "May 2025 - August 2025",
+        dateLabel: "Project dates",
         liveSiteLink: "https://www.sanjayspics.com/",
         repoLink: "https://github.com/sanjito31/sjayspics"
     }
@@ -19,7 +21,8 @@ export default function SanjaysPics() {
         prisma: true,
         postgresql: true,
         cloudinary: true,
-        betterAuth: true
+        betterAuth: true,
+        additionalTechnologies: ["TypeScript", "Vercel Blob"]
     }
 
     return (
@@ -38,6 +41,24 @@ export default function SanjaysPics() {
                 )
             }}
         >
+            <Highlights items={[
+                {
+                    title: "Custom Fujifilm parser",
+                    description: "Reverse-engineered Fujifilm MakerNote metadata and built a TypeScript TIFF/IFD parser to extract proprietary camera settings unavailable through standard EXIF libraries."
+                },
+                {
+                    title: "Binary TIFF parsing",
+                    description: "Supports little-endian 12-byte IFD entries, inline and offset-based values, and all 12 TIFF field types, including signed and unsigned integers, strings, arrays, floating-point values, and rationals."
+                },
+                {
+                    title: "40 proprietary Fujifilm tags",
+                    description: "Maps tag IDs and encoded values to human-readable film simulation, white balance, grain, dynamic range, clarity, and color effect settings, persisting selected metadata through Prisma."
+                },
+                {
+                    title: "Photography platform",
+                    description: "The surrounding Next.js platform combines authenticated administration, image management, and EXIF visualization with a Cloudinary/Vercel Blob image pipeline for optimized delivery."
+                }
+            ]} />
             <h2 className="font-bold text-2xl my-2 md:text-[2vw]">Overview</h2>
             <div className="flex flex-col md:grid md:grid-cols-2">
                 
@@ -84,7 +105,7 @@ export default function SanjaysPics() {
                         Hidden admin dashboard <b>login page</b> using email and password credentials.
                     </div>
                 </div>
-                <div className="md:col-start-1 md:col-span-1 md:m-88">
+                <div className="md:col-start-1 md:col-span-1 md:m-8">
                     <Image
                         className="md:rounded-lg"
                         src="https://agdha7peszt0aou5.public.blob.vercel-storage.com/assets/sanjays-pics/sanjays-pics-dashboard.png" 
@@ -95,12 +116,12 @@ export default function SanjaysPics() {
                 </div>
                 <div className="m-2 md:col-start-2 md:col-span-1 flex md:my-auto md:mx-8">
                     <div className="text-md md:text-[1.5vw]">
-                        <b>Adminastrator dashboard</b> to manage photos on the site including photo attributes such as hidden or not.
+                        <b>Administrator dashboard</b> to manage photos on the site including photo attributes such as hidden or not.
                     </div>
                 </div>
                 <div className="md:col-start-1 md:col-span-1 md:m-8">
                     <Image
-                        className="md:md:rounded-lg"
+                        className="md:rounded-lg"
                         src="https://agdha7peszt0aou5.public.blob.vercel-storage.com/assets/sanjays-pics/sanjays-pics-upload-page.png" 
                         alt="screenshot of the upload form"
                         width={800}

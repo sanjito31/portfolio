@@ -22,6 +22,7 @@ export type TechStackProps = {
     cLang?: boolean,
     fastAPI?: boolean,
     docker?: boolean,
+    additionalTechnologies?: string[],
     children?: React.ReactNode,
     className?: string
 }
@@ -38,6 +39,7 @@ export default function TechStack({
     cLang = false,
     fastAPI = false,
     docker = false,
+    additionalTechnologies = [],
     children, 
     className
 }: TechStackProps) {
@@ -120,6 +122,13 @@ export default function TechStack({
                         Docker
                     </div>
                 </div>}
+
+                {additionalTechnologies.map((technology) => (
+                    <div key={technology} className="flex m-2 items-center">
+                        <span aria-hidden="true" className="mx-2 w-6 text-center">+</span>
+                        <div>{technology}</div>
+                    </div>
+                ))}
 
             </div>
         </div>

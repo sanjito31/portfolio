@@ -8,11 +8,11 @@ export default function About() {
                             text-lg p-4 
                             md:text-[1.5vw] md:p-20
                             flex flex-col items-center justify-center border-1">
-                <p className="m-4 text-center">I&apos;m a Computer Science graduate student at <span className="bg-[#003ae8] text-white px-1">Columbia University</span> specializing in Machine Learning. My journey began with a Microbiology degree from UCLA and biomedical research on Parkinson&apos;s disease and ALS at Cedars-Sinai.</p>
+                <p className="m-4 text-center">I&apos;m a master&apos;s student in Computer Science at <span className="bg-[#003ae8] text-white px-1">Columbia University</span>, focused on backend engineering, machine learning, and the systems that bring them together. I enjoy designing software that handles complex data and remains dependable as demands grow.</p>
                 <br />
-                <p className="m-4 text-center">While analyzing thousands of microscopy images and complex datasets, I discovered my passion for AI and how machine learning could automate analysis and accelerate discoveries that help patients.</p>
+                <p className="m-4 text-center">My background includes a Microbiology degree from UCLA and biomedical research on Parkinson&apos;s disease and ALS at Cedars-Sinai. Building tools to process microscopy images and analyze research data drew me toward software engineering and ML, and gives me a particular interest in healthcare, health AI, and biotech.</p>
                 <br />
-                <p className="m-4 text-center">Today, I focus on using technology to create meaningful impact—particularly developing machine learning solutions to bridge brain signals and robotics, helping individuals with disabilities through intelligent prosthetics and assistive devices.</p>
+                <p className="m-4 text-center">I&apos;m interested in opportunities across industries where I can build robust backend services, make systems resilient to failure, and solve challenging engineering problems. Whether supporting a healthcare product, an ML application, or another service people rely on, I want to build systems that work reliably in practice.</p>
                 <br />
             </div>
         </Page>

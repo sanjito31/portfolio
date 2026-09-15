@@ -1,35 +1,44 @@
 import ProjectPage from "@/components/ProjectPage/ProjectPage"
-import { BasicInfoProps } from "@/components/ProjectPage/BasicInfo"
-import { TechStackProps } from "@/components/ProjectPage/TechStack"
+import Highlights from "@/components/ProjectPage/Highlights"
 
-export default function ParticleSimulation() {
-    const basicInfoParams: BasicInfoProps = {
-        description: "Performant multidimensional particle movement and interaction simulator made to model crowd dispersal and flocking behaviors. Built in C.",
-        contributor: "Sanjay Kumar, Robert Stott, Beverly Qin",
-        date: "May 2025"
-    }
-
-    const techStackParams: TechStackProps = {
-        cLang: true
-    } 
-
-    return(
-        <ProjectPage 
-            pageTitle="Particle Simulation" 
-            basicInfoProps={basicInfoParams} 
-            techStackProps={techStackParams}
+export default function Project() {
+    return (
+        <ProjectPage
+            pageTitle="Particle Simulation"
+            basicInfoProps={{
+                description: "A real-time agent-based crowd simulation in C and SDL2 modeling pedestrian navigation, collision response, obstacle avoidance, congestion, points of interest, and group behavior using force-based vector dynamics.",
+                contributor: "Sanjay Kumar, Robert Stott, Beverly Qin",
+                date: "April 2025 - May 2025",
+                dateLabel: "Project dates"
+            }}
+            techStackProps={{
+                cLang: true,
+                additionalTechnologies: [
+                    "SDL2",
+                    "Agent-Based Modeling",
+                    "Statistical Analysis",
+                    "R"
+                ]
+            }}
         >
-            <h2 className="font-bold text-[2vw]">Overview</h2>
-            <div className="grid grid-cols-2">
-                <div className="col-start-1 col-span-1 m-8">
-                    {/* Add project image here */}
-                </div>
-                <div className="col-start-2 col-span-1 flex my-auto mx-8">
-                    <div className="text-[1.5vw]">
-                        
-                    </div>
-                </div>
-            </div>
+            <Highlights items={[
+                {
+                    title: "Crowd dynamics",
+                    description: "Coordinated development of a real-time simulation that models pedestrian navigation, collision response, obstacles, congestion, points of interest, and group behavior with force-based vector dynamics."
+                },
+                {
+                    title: "Reproducible agent behavior",
+                    description: "Pairwise pedestrian interactions combine Boids separation, alignment, and cohesion with family-group attraction and probabilistic navigation decisions. Seeded randomness makes emergent crowd behavior reproducible."
+                },
+                {
+                    title: "Concurrent experiments",
+                    description: "An automated experiment runner executes independent simulation processes concurrently and records 27 agent-level behavioral and physical variables for reproducible parameter studies."
+                },
+                {
+                    title: "Statistical analysis in R",
+                    description: "Parameter sweeps, principal component analysis (PCA), outlier filtering, correlation analysis, and trajectory visualization reveal how attraction radii and force constants affect crowd behavior."
+                }
+            ]} />
         </ProjectPage>
     )
 }

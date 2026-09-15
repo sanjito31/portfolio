@@ -50,7 +50,7 @@ export default function Home() {
             <p className="text-center font-mono 
                           text-md
                           md:text-[1.75vw]">
-              Passionate about improving the healthcare experience for patients and providers.
+              Passionate about building resilient backend systems and ML applications, with a special interest in healthcare and biotech.
             </p>
           </div>
 
@@ -75,8 +75,8 @@ export default function Home() {
             <div className="
                             md:col-start-1 md:col-span-1 md:row-start-8 md:row-span-4">
               
-                <ProjectCard title="Sanjay&apos;s Pics" href="/projects/sanjays-pics">
-                  Photography portfolio with custom Fujifilm EXIF parser extracting 50+ undocumented metadata fields. Features admin dashboard, role-based auth, and cloud-optimized image pipeline.
+                <ProjectCard title="Small Businesses Payroll" href="/projects/small-businesses-payroll">
+                  Full-stack payroll platform with historical employee records, immutable payroll snapshots, and business-scoped access. Independently deployed web and API services with Docker and CI/CD.
                 </ProjectCard>
               
             </div>
@@ -84,8 +84,8 @@ export default function Home() {
             <div className="
                             md:col-start-2 md:col-span-1 md:row-start-8 md:row-span-4">
               
-                <ProjectCard title="LED Info Panel" href="/projects/led-info-panel">
-                  Full-stack IoT display system using ESP32 microcontroller with 64x32 RGB LED matrix. Dockerized API service aggregates real-time data from weather, transit, music, and sports APIs with modular C++ architecture.
+                <ProjectCard title="Minitron" href="/projects/led-info-panel">
+                  An ESP32-powered 64x32 HUB75 LED display with FreeRTOS animation rendering, I2S DMA refresh, and a Dockerized FastAPI service for live weather, transit, music, and Formula 1 data.
                 </ProjectCard>
               
             </div>
