@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cactus_Classical_Serif } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -14,15 +14,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const serifFont = Cactus_Classical_Serif({
-  variable: "--font-custom-serif",
-  subsets: ["latin"],
-  weight: ["400"]
-});
-
 export const metadata: Metadata = {
   title: "Sanjay Kumar",
-  description: "Personal portfolio for Sanjay Kumar.",
+  description: "Sanjay Kumar — backend engineering, machine learning, and dependable software systems. Computer Science at Columbia University.",
 };
 
 export default function RootLayout({
@@ -31,14 +25,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function () {
+            var theme;
+            try { theme = localStorage.getItem('portfolio-theme'); } catch (error) {}
+            if (theme !== 'light' && theme !== 'dark') {
+              theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = theme;
+          })();
+        ` }} />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${serifFont.variable} antialiased mx-2 md:mx-8 border-black border-l-1 border-r-1`}
+        id="top" className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar />
-        {children}
-        <Footer />
+        <a href="#main-content" className="skip-link">Skip to content</a>
+        <div className="site-shell">
+          <NavBar />
+          <main id="main-content">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

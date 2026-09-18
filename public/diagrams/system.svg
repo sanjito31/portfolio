@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="color:#20231f" viewBox="0 0 320 350" role="img" aria-labelledby="sk-stack-title"><title id="sk-stack-title">Exploded vector drawing of three connected computing layers</title>
+        <g fill="none" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round">
+          <path d="M23 27h14m-7-7v14m253-7h14m-7-7v14M23 323h14m-7-7v14m253-7h14m-7-7v14"/>
+          <path d="M160 35v274M43 227l235-135M43 133l235 135" stroke-dasharray="3 5" opacity=".45"/>
+          <path d="M63 235v-92m194 92v-92M160 291V181" stroke-dasharray="4 4"/>
+          <path d="m59 235 101-58 101 58-101 58z" fill="#f55b2d"/><path d="M59 235v12l101 58 101-58v-12M160 293v12"/>
+          <path d="m76 235 84-48 84 48-84 48zM101 235l59-34 59 34-59 34z"/>
+          <path d="m59 165 101-58 101 58-101 58z" fill="#f55b2d"/><path d="M59 165v12l101 58 101-58v-12M160 223v12"/>
+          <path d="m80 165 80-46 80 46-80 46zM105 165l55-32 55 32-55 32zM132 165l28-16 28 16-28 16z"/>
+          <path d="m59 95 101-58 101 58-101 58z" fill="#f55b2d"/><path d="M59 95v12l101 58 101-58V95M160 153v12"/>
+          <path d="m78 95 82-47 82 47-82 47zM102 95l58-33 58 33-58 33z"/>
+          <path d="m127 95 33-19 33 19-33 19z" fill="currentColor"/>
+          <path d="m124 77-13-8m24 2-13-8m24 2-13-8m-10 32-13-8m7 17-13 8m24-2-13 8m24-2-13 8m48-43 13-8m-2 14 13-8m-2 14 13-8m-34 39 13 8m-2-14 13 8m-2-14 13 8"/>
+          <path d="M261 96h22v50M261 165h22v41M261 235h22v31"/>
+          <circle cx="283" cy="150" r="3" fill="currentColor"/><circle cx="283" cy="210" r="3" fill="currentColor"/><circle cx="283" cy="270" r="3" fill="currentColor"/>
+          <path d="M38 95v198m-5-198h10m-10 198h10M68 319h185m-185-5v10m185-10v10"/>
+        </g>
+      </svg>

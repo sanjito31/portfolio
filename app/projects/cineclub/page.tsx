@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
+import { projects } from "@/data/projects";
 import { NextJS, React } from "@/components/Icons"
 import ProjectPage from "@/components/ProjectPage/ProjectPage"
 import Highlights from "@/components/ProjectPage/Highlights"
+
+export const metadata: Metadata = {
+    title: `${projects["cineclub"].title} — Sanjay Kumar`,
+    description: projects["cineclub"].description,
+};
 
 export default function Cineclub() {
     return (

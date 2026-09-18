@@ -1,29 +1,23 @@
-import Page from "@/components/BasicPageLayout"
-import BasicInfo, { BasicInfoProps } from "@/components/ProjectPage/BasicInfo"
-import TechStack, { TechStackProps } from "@/components/ProjectPage/TechStack"
+import Page from "@/components/BasicPageLayout";
+import BasicInfo, { BasicInfoProps } from "@/components/ProjectPage/BasicInfo";
+import TechStack, { TechStackProps } from "@/components/ProjectPage/TechStack";
+import ProjectVisual, { projectLabels } from "@/components/ProjectVisual";
+import { projects, type ProjectId } from "@/data/projects";
 
 export type ProjectPageProps = {
-    pageTitle: string,
-    basicInfoProps: BasicInfoProps,
-    techStackProps: TechStackProps,
-    children?: React.ReactNode
-}
-
+  pageTitle: string;
+  basicInfoProps: BasicInfoProps;
+  techStackProps: TechStackProps;
+  children?: React.ReactNode;
+};
 export default function ProjectPage({ pageTitle, basicInfoProps, techStackProps, children }: ProjectPageProps) {
-    return (
-        <Page pageTitle={pageTitle}>
-            <div className="font-mono">
-                <div className="flex flex-col md:grid md:grid-cols-2">
-                    
-                    <BasicInfo {...basicInfoProps} className="md:col-start-1 md:col-span-1 flex flex-col items-start justify-center border-1 p-10"/>
-
-                    <TechStack {...techStackProps} className="md:col-start-2 md:col-span-1 flex flex-col items-center justify-center border-1 p-4 md:p-10"/>
-                    
-                    <div className="md:col-start-1 md:col-span-2 flex flex-col items-center justify-center border-1">
-                        {children}
-                    </div>
-                </div>
-            </div>
-        </Page>
-    )
+  const projectId = (Object.keys(projects) as ProjectId[]).find(id => projects[id].title === pageTitle);
+  const label = projectId ? projectLabels[projectId] : undefined;
+  return (<Page pageTitle={pageTitle} eyebrow={label ? `${label.reference} / ${label.category}` : "01 / Project study"} backLink>
+    <div className="project-specification">
+      <BasicInfo {...basicInfoProps} className="basic-info" />
+      <aside className="project-sidebar">{projectId && <ProjectVisual projectId={projectId} />}<TechStack {...techStackProps} className="tech-stack" /></aside>
+    </div>
+    {children && <div className="project-content">{children}</div>}
+  </Page>);
 }

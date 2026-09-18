@@ -1,35 +1,23 @@
-import Link from "next/link"
-
+import { ArrowUpRight } from "lucide-react";
 export type BasicInfoProps = {
-    description: string,
-    contributor: string,
-    date?: string,
-    liveSiteLink?: string,
-    repoLink?: string,
-    repoLinks?: { label: string, href: string }[],
-    dateLabel?: string,
-    className?: string
-}
-
-export default function BasicInfo({description, contributor, date, liveSiteLink, repoLink, repoLinks, dateLabel = "Date completed", className}: BasicInfoProps) {
-    return (
-        <div className={className}>
-            <div className="mb-4">
-                <b>Description:</b> {description}
-            </div>
-            <div className="mb-4">
-                <b>Contributor(s):</b> {contributor}
-            </div>
-            {date && <div className="mb-8">
-                <b>{dateLabel}:</b> {date}
-            </div>}
-            <div className="flex flex-wrap gap-4">
-                {liveSiteLink && <Link href={liveSiteLink} target="_blank" className="border-1 p-4 hover:bg-black hover:text-white"><b>Live Site</b></Link>}
-                {repoLink && <Link href={repoLink} target="_blank" className="border-1 p-4 hover:bg-black hover:text-white">Github Repo</Link>}
-                {repoLinks?.map(({ label, href }) => (
-                    <Link key={href} href={href} target="_blank" className="border-1 p-4 hover:bg-black hover:text-white">{label}</Link>
-                ))}
-            </div>
-        </div>
-    )
+  description: string;
+  contributor: string;
+  date?: string;
+  liveSiteLink?: string;
+  repoLink?: string;
+  repoLinks?: { label: string; href: string }[];
+  dateLabel?: string;
+  className?: string;
+};
+export default function BasicInfo({ description, contributor, date, liveSiteLink, repoLink, repoLinks, dateLabel = "Date completed", className }: BasicInfoProps) {
+  const links = [
+    ...(liveSiteLink ? [{ label: "Live site", href: liveSiteLink }] : []),
+    ...(repoLink ? [{ label: "GitHub repository", href: repoLink }] : []),
+    ...(repoLinks ?? []),
+  ];
+  return (<section className={className} aria-labelledby="project-overview">
+    <p className="eyebrow">01 / Overview</p><h2 id="project-overview">What it does.</h2><p className="overview-description">{description}</p>
+    <dl className="project-facts"><div><dt>Contributors</dt><dd>{contributor}</dd></div>{date && <div><dt>{dateLabel}</dt><dd>{date}</dd></div>}</dl>
+    {links.length > 0 && <div className="project-actions">{links.map(({ label, href }) => <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="action-link">{label}<ArrowUpRight size={17} aria-hidden="true" /></a>)}</div>}
+  </section>);
 }

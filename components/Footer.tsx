@@ -1,14 +1,10 @@
-import Link from "next/link"
+import { ArrowUpRight } from "lucide-react";
 export default function Footer() {
-    return(
-        <footer className="pt-10 pb-4 border-1 flex">
-          <div className="flex flex-col mx-auto font-mono font-bold text-[10px] sm:text-xs md:text-[0.85vw] items-center">
-            <p className="text-xs sm:text-sm md:text-[1.1vw]">Thanks for checking out my page!</p>
-            <p className="p-2" />
-            <p>Sanjay Kumar, 2026</p>
-            <p>Created using Next.js. Hosted on Vercel.</p>
-            <p>Design inspired by<Link href="https://ujjo.studiofreight.com/" target="_blank" rel="noopener noreferrer"> Ujjo</Link></p>
-          </div>
-        </footer>
-    )
+  return (<footer>
+    <div className="contact-banner">
+      <div><p className="eyebrow">04 / Get in touch</p><h2>Let’s build something useful.</h2><a className="eyebrow email-link" href="mailto:svk2121@columbia.edu">svk2121@columbia.edu</a></div>
+      <a href="mailto:svk2121@columbia.edu" aria-label="Email Sanjay" className="contact-arrow"><ArrowUpRight aria-hidden="true" /></a>
+    </div>
+    <div className="site-footer eyebrow"><span>© Sanjay Kumar / 2026</span><div><a href="https://github.com/sanjito31/" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="https://www.linkedin.com/in/sanjayvkumar31/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#top">Back to top ↑</a></div></div>
+  </footer>);
 }

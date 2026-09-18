@@ -1,17 +1,21 @@
-type PageProps = {
-    pageTitle: string,
-    children: React.ReactNode
-}
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
-export default function Page({pageTitle, children}: PageProps) {
-    return(
-        <div className="flex flex-col">
-            <h1 className="flex items-center justify-center font-mono font-bold 
-                            bg-black text-white
-                            text-4xl py-2
-                            md:text-[4vw] md:py-4"
-                            >{pageTitle}</h1>
-            {children}
-        </div>
-    )
+type PageProps = {
+  pageTitle: string;
+  eyebrow?: string;
+  intro?: string;
+  backLink?: boolean;
+  children: React.ReactNode;
+};
+export default function Page({ pageTitle, eyebrow = "Portfolio / Field notes", intro, backLink, children }: PageProps) {
+  return (<>
+    <header className="page-heading">
+      {backLink && <Link href="/projects" className="back-link eyebrow"><ArrowLeft size={15} aria-hidden="true" /> Project index</Link>}
+      <p className="eyebrow">{eyebrow}</p>
+      <h1>{pageTitle}</h1>
+      {intro && <p className="page-intro">{intro}</p>}
+    </header>
+    {children}
+  </>);
 }

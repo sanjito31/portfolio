@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
+import { projects } from "@/data/projects";
 import Highlights from "@/components/ProjectPage/Highlights"
 import ProjectPage from "@/components/ProjectPage/ProjectPage"
 import { BasicInfoProps } from "@/components/ProjectPage/BasicInfo"
 import { TechStackProps } from "@/components/ProjectPage/TechStack"
 import Image from "next/image"
 import { Arduino, PlatformIO } from "@/components/Icons"
+
+export const metadata: Metadata = {
+    title: `${projects["led-info-panel"].title} — Sanjay Kumar`,
+    description: projects["led-info-panel"].description,
+};
 
 export default function Minitron() {
     const basicInfoParams: BasicInfoProps = {
@@ -66,11 +73,11 @@ export default function Minitron() {
                     description: "A FastAPI backend aggregates OpenWeatherMap, NYC MTA, Spotify, and Formula 1 services and runs as a Dockerized service on self-hosted infrastructure."
                 }
             ]} />
-            <h2 className="font-bold text-2xl my-2 md:text-[2vw]">Overview</h2>
-            <div className="max-md:flex max-md:flex-col md:grid md:grid-cols-2">
-                <div className="md:col-start-1 md:col-span-1 md:m-8">
+            <h2 className="gallery-heading">Overview</h2>
+            <div className="project-gallery">
+                <div className="gallery-image">
                     <Image 
-                        className="md:rounded-lg md:shadow-lg"
+                        className="study-image"
                         src="https://agdha7peszt0aou5.public.blob.vercel-storage.com/assets/led-info-panel/led_weather.JPG" 
                         alt="image of an LED panel connected with multicolor wires to a microcontroller"
                         width={800}
@@ -78,14 +85,14 @@ export default function Minitron() {
                     >
                     </Image> 
                 </div>
-                <div className="m-2 md:col-start-2 md:col-span-1 md:flex md:my-auto md:mx-8">
-                    <div className="text-md md:text-[1.5vw]">
+                <div className="gallery-caption">
+                    <div className="gallery-text">
                         The <b>64x32 HUB75 LED matrix</b> is driven by an <b>ESP32</b> using continuous <b>I2S DMA refresh</b>. Display scanning runs independently of Wi-Fi communication and image decoding, while the firmware downloads WebP animations over HTTP from the remote API.
                     </div>
                 </div>
-                <div className="md:col-start-1 md:col-span-1 md:m-8">
+                <div className="gallery-image">
                     <Image 
-                        className="md:rounded-lg md:shadow-lg"
+                        className="study-image"
                         src="https://agdha7peszt0aou5.public.blob.vercel-storage.com/assets/led-info-panel/led_time_2.jpg" 
                         alt="image of an LED panel connected with multicolor wires to a microcontroller"
                         width={800}
@@ -93,14 +100,14 @@ export default function Minitron() {
                     >
                     </Image> 
                 </div>
-                <div className="m-2 md:col-start-2 md:col-span-1 md:flex md:my-auto md:mx-8">
-                    <div className="text-md md:text-[1.5vw]">
+                <div className="gallery-caption">
+                    <div className="gallery-text">
                         Panel can display the time with dynamic animations.
                     </div>
                 </div>
-                <div className="md:col-start-1 md:col-span-1 md:m-8">
+                <div className="gallery-image">
                     <Image 
-                        className="md:rounded-lg md:shadow-lg"
+                        className="study-image"
                         src="https://agdha7peszt0aou5.public.blob.vercel-storage.com/assets/led-info-panel/led_plane_2.png"
                         alt="image of an LED panel connected with multicolor wires to a microcontroller"
                         width={800}
@@ -108,8 +115,8 @@ export default function Minitron() {
                     >
                     </Image> 
                 </div>
-                <div className="m-2 md:col-start-2 md:col-span-1 md:flex md:my-auto md:mx-8">
-                    <div className="text-md md:text-[1.5vw]">
+                <div className="gallery-caption">
+                    <div className="gallery-text">
                         Track planes flying overhead
                     </div>
                 </div>
