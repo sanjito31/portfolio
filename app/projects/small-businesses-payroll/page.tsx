@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
+import { projects } from "@/data/projects";
 import ProjectPage from "@/components/ProjectPage/ProjectPage"
 import Highlights from "@/components/ProjectPage/Highlights"
+
+export const metadata: Metadata = {
+    title: `${projects["small-businesses-payroll"].title} — Sanjay Kumar`,
+    description: projects["small-businesses-payroll"].description,
+};
 
 export default function Project() {
     return (

@@ -1,6 +1,12 @@
-import { NextJS, React } from "@/components/Icons"
+import type { Metadata } from "next";
+import { projects } from "@/data/projects";
 import ProjectPage from "@/components/ProjectPage/ProjectPage"
 import Highlights from "@/components/ProjectPage/Highlights"
+
+export const metadata: Metadata = {
+    title: `${projects["cineclub"].title} — Sanjay Kumar`,
+    description: projects["cineclub"].description,
+};
 
 export default function Cineclub() {
     return (
@@ -14,19 +20,7 @@ export default function Cineclub() {
             techStackProps={{
                 postgresql: true,
                 prisma: true,
-                additionalTechnologies: ["TypeScript", "Supabase Auth", "Tailwind CSS"],
-                children: (
-                    <>
-                        <div className="flex m-2 items-center">
-                            <NextJS width={24} height={24} className="mx-2" />
-                            <div>Next.js 16</div>
-                        </div>
-                        <div className="flex m-2 items-center">
-                            <React width={24} height={24} className="mx-2" />
-                            <div>React 19</div>
-                        </div>
-                    </>
-                )
+                additionalTechnologies: ["Next.js 16", "React 19", "TypeScript", "Supabase Auth", "Tailwind CSS"]
             }}
         >
             <Highlights items={[
