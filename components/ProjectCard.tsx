@@ -3,12 +3,12 @@ import Link from "next/link";
 import { projects, type ProjectId } from "@/data/projects";
 import ProjectVisual, { projectLabels } from "@/components/ProjectVisual";
 export default function ProjectCard({ projectId }: { projectId: ProjectId }) {
-  const { title, href, description, tags } = projects[projectId];
+  const { title, href, description, tags, serial } = projects[projectId];
   const { reference, category } = projectLabels[projectId];
   return (<article className="project-card">
     <ProjectVisual projectId={projectId} />
     <div className="project-copy">
-      <p className="eyebrow">{reference} / {category}</p>
+      <div className="card-register"><p className="eyebrow">{reference} / {category}</p><span className="micro-label">{serial}</span></div>
       <h3><Link href={href}>{title}</Link></h3>
       <p className="project-description">{description}</p>
       <ul className="tag-list" aria-label="Project features">{tags.map(tag => <li key={tag}>{tag}</li>)}</ul>

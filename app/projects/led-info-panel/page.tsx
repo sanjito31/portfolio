@@ -5,7 +5,6 @@ import ProjectPage from "@/components/ProjectPage/ProjectPage"
 import { BasicInfoProps } from "@/components/ProjectPage/BasicInfo"
 import { TechStackProps } from "@/components/ProjectPage/TechStack"
 import Image from "next/image"
-import { Arduino, PlatformIO } from "@/components/Icons"
 
 export const metadata: Metadata = {
     title: `${projects["led-info-panel"].title} — Sanjay Kumar`,
@@ -29,31 +28,14 @@ export default function Minitron() {
         fastAPI: true,
         docker: true,
         cLang: true,
-        additionalTechnologies: ["ESP32", "FreeRTOS", "I2S DMA", "HUB75", "libwebp"]
+        additionalTechnologies: ["ESP32", "FreeRTOS", "I2S DMA", "HUB75", "libwebp", "Arduino", "PlatformIO"]
     } 
 
     return(
         <ProjectPage 
             pageTitle="Minitron"
             basicInfoProps={basicInfoParams} 
-            techStackProps={{...techStackParams,
-                children: (
-                    <>
-                        <div className="flex m-2 items-center">
-                            <Arduino width={24} height={24} className="mx-2" />
-                            <div>
-                                Arduino
-                            </div>
-                        </div>
-                        <div className="flex m-2 items-center">
-                            <PlatformIO width={24} height={24} className="mx-2" />
-                            <div>
-                                PlatformIO
-                            </div>
-                        </div>
-                    </>
-                )
-            }}
+            techStackProps={techStackParams}
         >
             <Highlights items={[
                 {
@@ -73,7 +55,7 @@ export default function Minitron() {
                     description: "A FastAPI backend aggregates OpenWeatherMap, NYC MTA, Spotify, and Formula 1 services and runs as a Dockerized service on self-hosted infrastructure."
                 }
             ]} />
-            <h2 className="gallery-heading">Overview</h2>
+            <h2 className="gallery-heading eyebrow">04 / In practice</h2>
             <div className="project-gallery">
                 <div className="gallery-image">
                     <Image 

@@ -33,11 +33,15 @@ export default function ThemeToggle() {
   }
 
   return (
-    <button type="button" className="theme-toggle eyebrow" onClick={toggleTheme} aria-label="Dark mode" aria-pressed={isDark}>
-      <Moon className="theme-moon" size={15} aria-hidden="true" />
-      <Sun className="theme-sun" size={15} aria-hidden="true" />
-      <span className="theme-light-label" aria-hidden="true">Dark</span>
-      <span className="theme-dark-label" aria-hidden="true">Light</span>
+    <button
+      type="button"
+      className="theme-toggle"
+      onClick={toggleTheme}
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={isDark}
+    >
+      <Moon className="theme-moon" size={17} aria-hidden="true" />
+      <Sun className="theme-sun" size={17} aria-hidden="true" />
     </button>
   );
 }

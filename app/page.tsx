@@ -1,3 +1,4 @@
+import { projects } from "@/data/projects";
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
@@ -6,7 +7,7 @@ export default function Home() {
   return (<>
     <Hero />
     <section id="selected-work" aria-labelledby="work-heading">
-      <div className="section-heading"><div><p className="eyebrow">01 / Project index</p><h2 id="work-heading">Selected work</h2></div><span className="eyebrow">Software ↔ hardware</span></div>
+      <div className="section-heading"><div><p className="eyebrow">01 / Project index</p><h2 id="work-heading">Selected work</h2></div><Link href="/projects" className="index-counter micro-label"><span>Full index</span><span className="count-badge">{String(Object.keys(projects).length).padStart(2, "0")}</span></Link></div>
       <div className="project-grid"><ProjectCard projectId="small-businesses-payroll" /><ProjectCard projectId="led-info-panel" /></div>
       <Link href="/projects" className="index-link eyebrow">Explore all seven projects <ArrowRight size={18} aria-hidden="true" /></Link>
     </section>

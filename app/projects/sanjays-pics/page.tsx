@@ -5,7 +5,6 @@ import Highlights from "@/components/ProjectPage/Highlights"
 import ProjectPage from "@/components/ProjectPage/ProjectPage"
 import { BasicInfoProps } from "@/components/ProjectPage/BasicInfo"
 import { TechStackProps } from "@/components/ProjectPage/TechStack"
-import { Tags } from "lucide-react"
 
 export const metadata: Metadata = {
     title: `${projects["sanjays-pics"].title} — Sanjay Kumar`,
@@ -29,24 +28,14 @@ export default function SanjaysPics() {
         postgresql: true,
         cloudinary: true,
         betterAuth: true,
-        additionalTechnologies: ["TypeScript", "Vercel Blob"]
+        additionalTechnologies: ["TypeScript", "Vercel Blob", "Custom Fujifilm EXIF parser"]
     }
 
     return (
         <ProjectPage 
             pageTitle="Sanjay's Pics" 
             basicInfoProps={basicInfoParams} 
-            techStackProps={{
-                ...techStackParams,
-                children: (
-                    <div className="flex m-2 items-center">
-                        <Tags size={24} className="mx-2"></Tags>
-                        <div>
-                            Custom Fujifilm EXIF tag parser
-                        </div>
-                    </div>
-                )
-            }}
+            techStackProps={techStackParams}
         >
             <Highlights items={[
                 {
@@ -66,7 +55,7 @@ export default function SanjaysPics() {
                     description: "The surrounding Next.js platform combines authenticated administration, image management, and EXIF visualization with a Cloudinary/Vercel Blob image pipeline for optimized delivery."
                 }
             ]} />
-            <h2 className="gallery-heading">Overview</h2>
+            <h2 className="gallery-heading eyebrow">04 / In practice</h2>
             <div className="project-gallery">
                 
                 <div className="gallery-image">

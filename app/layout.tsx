@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const spaceMono = Space_Mono({
+  variable: "--font-space-mono",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -39,7 +40,7 @@ export default function RootLayout({
         ` }} />
       </head>
       <body
-        id="top" className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        id="top" className={`${spaceGrotesk.variable} ${spaceMono.variable} antialiased`}
       >
         <a href="#main-content" className="skip-link">Skip to content</a>
         <div className="site-shell">

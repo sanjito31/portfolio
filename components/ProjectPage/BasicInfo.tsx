@@ -16,7 +16,7 @@ export default function BasicInfo({ description, contributor, date, liveSiteLink
     ...(repoLinks ?? []),
   ];
   return (<section className={className} aria-labelledby="project-overview">
-    <p className="eyebrow">01 / Overview</p><h2 id="project-overview">What it does.</h2><p className="overview-description">{description}</p>
+    <h2 id="project-overview" className="eyebrow">01 / Overview</h2><p className="overview-description">{description}</p>
     <dl className="project-facts"><div><dt>Contributors</dt><dd>{contributor}</dd></div>{date && <div><dt>{dateLabel}</dt><dd>{date}</dd></div>}</dl>
     {links.length > 0 && <div className="project-actions">{links.map(({ label, href }) => <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="action-link">{label}<ArrowUpRight size={17} aria-hidden="true" /></a>)}</div>}
   </section>);
